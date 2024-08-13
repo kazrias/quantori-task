@@ -9,7 +9,7 @@
 To get user information you need to log in.
 To do this`
 1. Press login button
-2. Write username and password. You can get them from [Link Text](https://dummyjson.com/users) or u can use one of these examples.
+2. Write username and password. You can get them from [dummyjson](https://dummyjson.com/users) or u can use one of these examples.
     "username": "emilys",
     "password": "emilyspass",
 

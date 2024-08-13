@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Contact } from './pages/Contact'
 import { About } from './pages/About'
-import { Error } from './components/error/error'
+import { Error } from './components/error/Error'
 import { useState, useEffect } from 'react'
 function App() {
   const [userName, setUserName] = useState('')
