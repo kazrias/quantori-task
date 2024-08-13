@@ -1,0 +1,49 @@
+.login-wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(128, 128, 128, 0.486);
+  z-index: 10;
+
+}
+
+.login {
+  width: 290px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  color: #66837e;
+  padding: 30px 20px;
+  &-form>div:first-child{
+    margin-bottom: 15px;
+  }
+  &-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    left: 10px;
+    bottom: -10px;
+    padding: 0 3px;
+  }
+
+  input {
+    padding: 10px 15px;
+    border: 2px solid #66837e;
+    width: 100%;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+  }
+}

@@ -1,8 +1,8 @@
 import './Button.scss'
-export const Button = ({ children, type }) => {
+export const Button = ({ onClick, styling, children, type }) => {
   return (
-    <div className={'button button--' + type}>
+    <button type={type} onClick={onClick} className={'button button--' + styling}>
       {children}
-    </div>
+    </button>
   )
 }

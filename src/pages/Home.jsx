@@ -1,6 +1,6 @@
-
+import { Login } from "../components/login/Login"
 export const Home = () => {
   return (
-    <div></div>
+    <div>home</div>
   )
 }
