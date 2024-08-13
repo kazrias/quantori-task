@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Contact } from './pages/Contact'
 import { About } from './pages/About'
+import { Error } from './components/error/error'
 import { useState, useEffect } from 'react'
 function App() {
   const [userName, setUserName] = useState('')
@@ -15,6 +16,7 @@ function App() {
   const [modalLoginClicked, setModalLoginClicked] = useState(false)
   const [token, setToken] = useState(null)
   const [user, setUser] = useState({})
+  const [error, setError] = useState(false)
   function handleLogout() {
     setUser({})
     localStorage.removeItem('userToken');
@@ -48,6 +50,7 @@ function App() {
         localStorage.setItem('userToken', data.token);
       } catch (err) {
         console.error('Error logging in:', err);
+        setError(true)
       }
     };
 
@@ -75,7 +78,6 @@ function App() {
 
         const data = await response.json();
         setUser(data);
-        console.log('User data:', data);
       } catch (err) {
         setError(err.message);
         console.error('Error fetching user data:', err);
@@ -107,6 +109,7 @@ function App() {
       </Main>
       <Footer />
       <Background />
+      {error && <Error setError={setError} />}
     </div>
   )
 }
