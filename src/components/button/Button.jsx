@@ -1,7 +1,8 @@
-import React from 'react'
-
-export const Button = ({ type }) => {
+import './Button.scss'
+export const Button = ({ children, type }) => {
   return (
-    <div className={'button button--' + type}>button</div>
+    <div className={'button button--' + type}>
+      {children}
+    </div>
   )
 }

@@ -12,7 +12,7 @@ export const Header = () => {
           </div>
           <div className="header__inner-nav">
             <Navigation />
-            <Button />
+            <Button type={'main'}>Login</Button>
           </div>
         </div>
       </div>

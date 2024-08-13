@@ -1,3 +1,19 @@
-.button{
-  
+.button {
+  min-width: 75px;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0px;
+  border-radius: 12px;
+  border: 2px solid #66837e;
+  color: #66837e;
+  background-color: white;
+  transition: filter .5s;
+  cursor: pointer;
+  &--main {
+    color: #fff;
+    background-color: #66837e;
+  }
+  &:hover{
+    filter: brightness(1.2);
+  }
 }
