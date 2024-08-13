@@ -4,7 +4,6 @@
   justify-content: center;
   border-radius: 20px;
   list-style: none;
-  ;
   border: 2px solid #66837e;
   overflow: hidden;
 
@@ -26,6 +25,18 @@
     &-link.selected {
       background-color: #66837e;
       color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-menu {
+    flex-direction: column;
+    border: none;
+    border-radius: 0px;
+          margin-bottom: 20px;
+    &__item{
+      width: 100%;
     }
   }
 }

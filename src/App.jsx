@@ -17,6 +17,7 @@ function App() {
   const [token, setToken] = useState(null)
   const [user, setUser] = useState({})
   const [logError, setLogError] = useState(false)
+  const [menuOpen,setMenuOpen]=useState(false)
   function handleLogout() {
     setUser({})
     localStorage.removeItem('userToken');
@@ -98,6 +99,8 @@ function App() {
         image={user.image}
         user={user}
         handleLogout={handleLogout}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
       />
       <Main>
         <Routes>

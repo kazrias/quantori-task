@@ -2,7 +2,7 @@
   position: absolute;
   inset: 0;
   background-color: rgba(128, 128, 128, 0.486);
-  z-index: 10;
+  z-index: 9999;
 
 }
 
@@ -13,6 +13,7 @@
   border-radius: 20px;
   top: 50%;
   left: 50%;
+  z-index: 9000;
   transform: translate(-50%, -50%);
   overflow: hidden;
   color: #66837e;
