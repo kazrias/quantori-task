@@ -19,3 +19,8 @@
   margin: 0 auto;
   height: 100%;
 }
+a{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
