@@ -4,7 +4,7 @@ import { Navigation } from './navigation/Navigation'
 import { Button } from '../button/Button.jsx'
 import { Login } from '../login/Login.jsx'
 import { useState } from 'react'
-export const Header = ({ user, image, loginButtonClicked, setLoginButtonClicked, userName, setUserName, userPass, setUserPass, setModalLoginClicked }) => {
+export const Header = ({ handleLogout, user, image, loginButtonClicked, setLoginButtonClicked, userName, setUserName, userPass, setUserPass, setModalLoginClicked }) => {
   function handleLoginClick() {
     setLoginButtonClicked(true)
   }
@@ -22,7 +22,7 @@ export const Header = ({ user, image, loginButtonClicked, setLoginButtonClicked,
           </div>
           <div className="header__inner-nav">
             <Navigation />
-            {user.id ? <Button onClick={handleLoginClick}>LogOut</Button> : <Button onClick={handleLoginClick} styling={'main'}>Login</Button>}
+            {user.id ? <Button onClick={handleLogout}>LogOut</Button> : <Button onClick={handleLoginClick} styling={'main'}>Login</Button>}
           </div>
         </div>
       </div>

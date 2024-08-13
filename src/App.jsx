@@ -15,13 +15,17 @@ function App() {
   const [modalLoginClicked, setModalLoginClicked] = useState(false)
   const [token, setToken] = useState(null)
   const [user, setUser] = useState({})
+  function handleLogout() {
+    setUser({})
+    localStorage.removeItem('userToken');
+  }
   useEffect(() => {
     const storedToken = localStorage.getItem('userToken');
     if (storedToken) {
       setToken(storedToken);
     }
   }, []);
-  
+
   useEffect(() => {
     const getToken = async () => {
       try {
@@ -92,6 +96,7 @@ function App() {
         setModalLoginClicked={setModalLoginClicked}
         image={user.image}
         user={user}
+        handleLogout={handleLogout}
       />
       <Main>
         <Routes>
