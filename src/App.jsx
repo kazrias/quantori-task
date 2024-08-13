@@ -16,7 +16,7 @@ function App() {
   const [modalLoginClicked, setModalLoginClicked] = useState(false)
   const [token, setToken] = useState(null)
   const [user, setUser] = useState({})
-  const [error, setError] = useState(false)
+  const [logError, setLogError] = useState(false)
   function handleLogout() {
     setUser({})
     localStorage.removeItem('userToken');
@@ -49,8 +49,8 @@ function App() {
         setToken(data.token);
         localStorage.setItem('userToken', data.token);
       } catch (err) {
-        console.error('Error logging in:', err);
-        setError(true)
+        console.error('Error logging in:');
+        setLogError(true)
       }
     };
 
@@ -79,7 +79,6 @@ function App() {
         const data = await response.json();
         setUser(data);
       } catch (err) {
-        setError(err.message);
         console.error('Error fetching user data:', err);
       }
     };
@@ -109,7 +108,7 @@ function App() {
       </Main>
       <Footer />
       <Background />
-      {error && <Error setError={setError} />}
+      {logError && <Error setLogError={setLogError} />}
     </div>
   )
 }
