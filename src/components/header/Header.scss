@@ -1,3 +1,20 @@
-.header{
+.header {
   height: 60px;
+  background-color: #fff;
+
+  &__inner,
+  &__inner-nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__inner {
+    gap: 20px;
+  }
+
+  &__inner-nav {
+    flex:1;
+    justify-content: space-between;
+  }
 }
