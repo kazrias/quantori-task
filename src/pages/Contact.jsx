@@ -1,10 +1,11 @@
-
-export const Contact = () => {
+import './PagesDefault.scss'
+export const Contact = ({ email, phone }) => {
   return (
-    <div style={{ padding: '15px 0 0 0 ', color: '#fff' }}>
-      <h2>My Contacts</h2>
-      <a href="tel:+37493077298">Call me: <span style={{ color: 'lightblue' }}>+37493077298</span></a>
-      <a href="https://t.me/AM0RALity">Contact me on <span style={{ color: 'lightblue' }}>Telegram</span></a>
-    </div >
+    email ? <div className="contacts">
+      <h2>Your contacts:</h2>
+      <span style={{display:'flex',gap:'10px'}}>Email: <a href="mailto:emily.johnson@x.dummyjson.com">{email}</a></span>
+      <span style={{ display: 'flex', gap: '10px' }}>Phone: <a href="tel:+37493077298">{phone}</a></span>
+    </div > : <div className="contacts">Login to get your contacts</div>
+
   )
 }

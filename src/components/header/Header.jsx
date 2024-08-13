@@ -4,32 +4,33 @@ import { Navigation } from './navigation/Navigation'
 import { Button } from '../button/Button.jsx'
 import { Login } from '../login/Login.jsx'
 import { useState } from 'react'
-export const Header = ({ userEmail, setUserEmail, userPass, setUserPass }) => {
-  const [loginIsClicked, setLoginIsClicked] = useState(false);
+export const Header = ({ user, image, loginButtonClicked, setLoginButtonClicked, userName, setUserName, userPass, setUserPass, setModalLoginClicked }) => {
   function handleLoginClick() {
-    setLoginIsClicked(true)
+    setLoginButtonClicked(true)
   }
   function handleCancelClick() {
-    setUserEmail('')
+    setUserName('')
     setUserPass('')
-    setLoginIsClicked(false)
+    setLoginButtonClicked(false)
   }
   return (
     <header className='header'>
       <div className='container'>
         <div className="header__inner">
           <div className="header__inner-profile">
-            <Profile />
+            <Profile image={image} />
           </div>
           <div className="header__inner-nav">
             <Navigation />
-            <Button onClick={handleLoginClick} styling={'main'}>Login</Button>
+            {user.id ? <Button onClick={handleLoginClick}>LogOut</Button> : <Button onClick={handleLoginClick} styling={'main'}>Login</Button>}
           </div>
         </div>
       </div>
-      {loginIsClicked && <Login
-        userEmail={userEmail} setUserEmail={setUserEmail}
+      {loginButtonClicked && <Login
+        userName={userName} setUserName={setUserName}
         userPass={userPass} setUserPass={setUserPass}
+        setModalLoginClicked={setModalLoginClicked}
+        setLoginButtonClicked={setLoginButtonClicked}
         handleCancelClick={handleCancelClick} />}
     </header>
   )

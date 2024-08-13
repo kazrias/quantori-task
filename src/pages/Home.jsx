@@ -1,6 +1,6 @@
-import { Login } from "../components/login/Login"
-export const Home = () => {
+import './PagesDefault.scss'
+export const Home = ({ firstName, lastName }) => {
   return (
-    <div>home</div>
+    firstName ? <div className="home"> Welcome back {firstName} {lastName} ! </div > : <div className="home">Please login to use our web page!</div>
   )
 }

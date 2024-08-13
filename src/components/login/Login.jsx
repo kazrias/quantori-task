@@ -1,18 +1,22 @@
 import './Login.scss'
 import { Button } from '../../components/button/Button'
-export const Login = ({ userEmail, setUserEmail, userPass, setUserPass, handleCancelClick }) => {
+export const Login = ({ setLoginButtonClicked,userName, setUserName, userPass, setUserPass, handleCancelClick, setModalLoginClicked }) => {
+  function handleModalLogin() {
+    setModalLoginClicked(true)
+    setLoginButtonClicked(false)
+  }
   return (
     <div className="login-wrapper">
       <div className='login' >
         <h2 className='login-title'>Login</h2>
-        <form className='login-form'>
+        <form className='login-form' onSubmit={(e) => { e.preventDefault(); handleModalLogin() }}>
           <div >
-            <label>Email</label>
+            <label>Username</label>
             <input
-              type="email"
-              onChange={e => setUserEmail(e.target.value)}
+              type="text"
+              onChange={e => setUserName(e.target.value)}
               required
-              value={userEmail}
+              value={userName}
             />
           </div>
           <div >
