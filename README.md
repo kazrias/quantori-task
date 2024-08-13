@@ -1,5 +1,7 @@
 # Quantori task to login and get user information
 
+You can view the page here [vercel](https://quantori-task-clce.vercel.app/)
+Or you can follow the steps below to install
 ## Installation
 1. Clone the repository:
 2. Navigate into the project (cd repository)
